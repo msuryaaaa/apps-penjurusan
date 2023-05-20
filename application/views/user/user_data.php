@@ -14,7 +14,7 @@
 					<th>#</th>
 					<th>Username</th>
 					<th>Nama</th>
-					<th>Level</th>
+					<th>Role</th>
 					<th>Aksi</th>
 				</tr>
 			</thead>
