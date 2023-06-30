@@ -5,12 +5,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class User extends CI_Controller
 {
 
+
+	public function __construct()
+	{
+		parent::__construct();
+		notLogin();
+		$this->load->model('user_m');
+	}
+
+
 	public function index()
 	{
-		notLogin();
-
 		$data['title'] = 'User';
-		$this->load->model('user_m');
 		$data['row'] = $this->user_m->get();
 
 		$this->load->view('templates/header', $data);
@@ -40,13 +46,20 @@ class User extends CI_Controller
 		$this->form_validation->set_message('min_length', '%s minimal 5 karakter.');
 		$this->form_validation->set_message('is_unique', '%s ini sudah dipakai.');
 
+		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/header', $data);
 			$this->load->view('templates/sidebar', $data);
 			$this->load->view('user/user_form_add');
 			$this->load->view('templates/footer');
 		} else {
-			echo "Proses simpan daata";
+			$post = $this->input->post(null, TRUE);
+			$this->user_m->add($post);
+			if ($this->db->affected_rows() > 0) {
+				echo "<script>alert('Data berhasil disimpan.');</script>";
+			}
+			echo "<script>window.location='" . site_url('user') . "';</script>";
 		}
 	}
 }

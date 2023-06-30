@@ -24,6 +24,15 @@ class User_m extends CI_Model
 		$query = $this->db->get();
 		return $query;
 	}
+
+	public function add($post)
+	{
+		$params['nama'] = $post['nama'];
+		$params['username'] = $post['username'];
+		$params['password'] = sha1($post['password']);
+		$params['level'] = $post['role'];
+		$this->db->insert('tbl_users', $params);
+	}
 }
 
 /* End of file User_m.php */
