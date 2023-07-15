@@ -29,12 +29,15 @@
 						<td><?= $data->nama ?></td>
 						<td><?= $data->level == 1 ? "BK" : "Siswa" ?></td>
 						<td class="text-center" style="width: 180px;">
-							<a href="<?php site_url('user/edit/') ?>" class="btn btn-success btn-sm">
-								<i class="fas fa-edit"></i> Ubah
-							</a>
-							<a href="<?php site_url('user/delete/') ?>" class="btn btn-danger btn-sm">
-								<i class="fas fa-trash"></i> Hapus
-							</a>
+							<form action="<?= site_url('user/delete') ?>" method="post">
+								<a href="<?= site_url('user/edit/' . $data->id_users) ?>" class="btn btn-success btn-sm">
+									<i class="fas fa-edit"></i> Ubah
+								</a>
+								<input type="hidden" name="id_users" value="<?= $data->id_users ?>">
+								<button onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger btn-sm">
+									<i class="fas fa-trash"></i> Hapus
+								</button>
+							</form>
 						</td>
 					</tr>
 				<?php } ?>

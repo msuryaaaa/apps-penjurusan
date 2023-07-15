@@ -33,6 +33,12 @@ class User_m extends CI_Model
 		$params['level'] = $post['role'];
 		$this->db->insert('tbl_users', $params);
 	}
+
+	public function delete($id)
+	{
+		$this->db->where('id_users', $id);
+		$this->db->delete('tbl_users');
+	}
 }
 
 /* End of file User_m.php */
