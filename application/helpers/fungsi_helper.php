@@ -19,3 +19,12 @@ function notLogin()
 		redirect('auth/login');
 	}
 }
+
+function notAdmin()
+{
+	$CI = &get_instance();
+	$CI->load->library('fungsi');
+	if ($CI->fungsi->user_login()->level != 1) {
+		redirect('dashboard');
+	}
+}

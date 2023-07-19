@@ -43,31 +43,32 @@
 				<nav class="mt-2">
 					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 						<li class="nav-header">MAIN NAVIGATION</li>
-						<li class="nav-item">
-							<a href="<?= site_url('dashboard') ?>" class="nav-link">
-								<i class="nav-icon fas fa-tachometer-alt"></i>
-								<p>Dashboard</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link ">
-								<i class="nav-icon fas fa-users"></i>
-								<p>Data Training</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="<?= site_url('jurusan') ?>" class="nav-link ">
-								<i class="nav-icon fas fa-database"></i>
-								<p>Data Jurusan</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link ">
-								<i class="nav-icon fas fa-book"></i>
-								<p>Hasil Penjurusan</p>
-							</a>
-						</li>
-						<?php if ($this->session->userdata('level') == 1) { ?>
+						<?php if ($this->fungsi->user_login()->level == 1) { ?>
+							<li class="nav-item">
+								<a href="<?= site_url('dashboard') ?>" class="nav-link">
+									<i class="nav-icon fas fa-tachometer-alt"></i>
+									<p>Dashboard</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link ">
+									<i class="nav-icon fas fa-users"></i>
+									<p>Data Training</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="<?= site_url('jurusan') ?>" class="nav-link ">
+									<i class="nav-icon fas fa-database"></i>
+									<p>Data Jurusan</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link ">
+									<i class="nav-icon fas fa-book"></i>
+									<p>Hasil Penjurusan</p>
+								</a>
+							</li>
+
 							<li class="nav-header">SETTINGS</li>
 							<li class="nav-item">
 								<a href="<?= site_url('user') ?>" class="nav-link">
