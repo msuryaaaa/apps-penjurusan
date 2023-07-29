@@ -24,7 +24,7 @@
 						<?= form_error('username') ?>
 					</div>
 					<div class="form-group <?= form_error('password') ? 'text-danger' : null ?>">
-						<label for="passwordInput">Password</label> <small>(Biarkan kososng jika tidak diubah)</small>
+						<label for="passwordInput">Password</label> <small>(Biarkan kosong jika tidak diubah)</small>
 						<input type="password" name="password" id="passwordInput" value="<?= $this->input->post('password') ?>" class="form-control <?= form_error('password') ? 'is-invalid' : null ?>" placeholder="Password">
 						<?= form_error('password') ?>
 					</div>

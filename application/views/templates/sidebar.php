@@ -68,7 +68,7 @@
 									<p>Hasil Penjurusan</p>
 								</a>
 							</li>
-
+							<li class="nav-header">FORM SISWA</li>
 							<li class="nav-header">SETTINGS</li>
 							<li class="nav-item">
 								<a href="<?= site_url('user') ?>" class="nav-link">

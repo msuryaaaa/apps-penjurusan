@@ -6,7 +6,7 @@
 	<div class="float-right d-none d-sm-inline-block">
 		<b>Version</b> 1.0.0
 	</div>
-	<strong>Copyright &copy; 2023 <a href="https://sman15bdg.sch.id">SMA Negeri 15 Bandug</a>.</strong> All rights reserved.
+	<strong>Copyright &copy; 2023 <a href="https://sman15bdg.sch.id">SMA Negeri 15 Bandung</a>.</strong> All rights reserved.
 </footer>
 
 <aside class="control-sidebar control-sidebar-dark">
